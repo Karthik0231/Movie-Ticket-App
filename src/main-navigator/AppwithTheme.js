@@ -3,6 +3,7 @@ import { PaperProvider } from 'react-native-paper';
 import AppNavigator from './AppNavigator.js';
 import { darkTheme, lightTheme } from '../theme/appTheme';
 import { ThemeContext } from '../Context/ThemeContext';
+import { AuthProvider } from '../Context/Context';
 
 export default function AppWithTheme() {
   const { theme } = useContext(ThemeContext);
@@ -12,7 +13,9 @@ export default function AppWithTheme() {
       {/* Paper Provider for REACT-NATIVE-PAPER */}
       <PaperProvider theme={currentTheme}>
         {/* Theme Provider to provide the theme */}
-        <AppNavigator />
+        <AuthProvider>
+          <AppNavigator />
+        </AuthProvider>
         {/* Main App Navigator */}
       </PaperProvider>
     </>

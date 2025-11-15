@@ -403,3 +403,5 @@ rm -rf ~/.gradle/caches/
 rm -rf android/.gradle
 rm -rf android/build
 rm -rf android/app/build
+
+gradlew assembleRelease -x lint -x test

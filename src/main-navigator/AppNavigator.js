@@ -4,6 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import Parent from './Parent.js';
 import { StatusBar } from 'react-native';
 import { useTheme } from 'react-native-paper';
+import AllUsers from '../Screen/AllUsers.js';
+import LoginScreen from '../Screen/Login.js';
 
 const Stack = createNativeStackNavigator();
 export default function AppNavigator() {
@@ -23,6 +25,16 @@ export default function AppNavigator() {
             <Stack.Screen
               name="Parent"
               component={Parent}
+              options={{ animation: 'fade_from_bottom' }}
+            />
+            <Stack.Screen
+              name="Users"
+              component={AllUsers}
+              options={{ animation: 'fade_from_bottom' }}
+            />
+            <Stack.Screen
+              name="login"
+              component={LoginScreen}
               options={{ animation: 'fade_from_bottom' }}
             />
 
